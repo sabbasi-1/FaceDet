@@ -1,6 +1,9 @@
 # FaceDet
 Comparison of faces and detection of multiple faces in a frame
 
+### Install Dependencies
+    pip install -r requirements.txt
+
 ## add_face.py
 This script extracts face embeddings from an image using DeepFace and saves them along with the person's name in a CSV file (face_embeddings.csv).
 
@@ -24,9 +27,9 @@ python add_face.py
 The script will process person.jpg and store the embedding under the name "John Doe".
 
 🔹 Expected Output
-
-  $ Face of John Doe stored successfully.
+    
+    Face of John Doe stored successfully.
 
 or if no face is found:
-
-  $ No face found!
+    
+    No face found!
