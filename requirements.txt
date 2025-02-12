@@ -1,0 +1,8 @@
+opencv-python
+torch
+pandas
+numpy
+deepface
+ultralytics
+scipy
+pickle-mixin
