@@ -9,12 +9,17 @@ This script extracts face embeddings from an image using DeepFace and saves them
 
 🔹 How It Works
 
-Extracts face embeddings from the input image using the ArcFace model.
-Converts the embedding into a hex-encoded string for storage.
-Checks if face_embeddings.csv exists:
-If not, it creates one with columns: name and encoding.
-Appends the new face embedding and name to the CSV file.
-Prints a success message if the face is stored, or an error if no face is detected.
+1. Extracts face embeddings from the input image using the ArcFace model.
+
+2. Converts the embedding into a hex-encoded string for storage.
+
+3. Checks if face_embeddings.csv exists:
+
+4. If not, it creates one with columns: name and encoding.
+
+5. Appends the new face embedding and name to the CSV file.
+
+6. Prints a success message if the face is stored, or an error if no face is detected.
 
 🔹 How to Run
 
@@ -73,3 +78,41 @@ or if no match is found:
 
     Cosine Similarity: 0.45
     No Match (Violation)
+
+## detect.py
+
+This script detects and extracts faces from images in a specified folder using a trained YOLO model and saves them as separate image files.
+
+🔹 How It Works
+
+1. Loads a model (model.pt) trained for face detection.
+
+2. Reads images from input_images/ directory.
+
+3. Runs inference on each image to detect faces.
+
+4. Extracts bounding boxes and crops the detected faces.
+
+5. Saves each detected face in extracted_faces/ directory with a unique filename.
+
+6. Prints the saved face filenames and confidence scores.
+
+🔹 How to Run
+
+1. Prepare the input directory: Place images inside input_images/.
+
+Run the script:
+
+    python extract_faces.py
+
+Extracted faces will be saved in extracted_faces/.
+
+🔹 Expected Output
+
+    Saved: extracted_faces/image1_face1.jpg (Confidence: 0.89)
+    Saved: extracted_faces/image1_face2.jpg (Confidence: 0.92)
+    Face extraction complete!
+
+If no faces are detected, nothing will be saved.
+
+
