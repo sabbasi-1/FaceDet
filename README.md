@@ -25,8 +25,8 @@ The script will process person.jpg and store the embedding under the name "John 
 
 🔹 Expected Output
 
-Face of John Doe stored successfully.
+  $ Face of John Doe stored successfully.
 
 or if no face is found:
 
-No face found!
+  $ No face found!
