@@ -121,7 +121,7 @@ This script detects faces using a model, allows the user to label each face, and
 
 🔹 How It Works
 
-1. Loads a trained YOLO model (model.pt) for face detection.
+1. Loads a trained model (model.pt) for face detection.
 
 2. Reads an image (person.jpg) and detects faces.
 
@@ -156,3 +156,58 @@ The script will:
     Saved: Jane Doe
 
 If no faces are detected, the script will simply exit.
+
+## compare_face_with_name.py
+
+This script detects a face in an image using YOLO, then compares it against stored embeddings in a CSV file using DeepFace and Cosine Similarity.
+
+🔹 How It Works
+
+1. Loads the YOLO model (model.pt) for face detection.
+
+2. Reads an image (2.png) and detects a face.
+
+3. Extracts and resizes the face to 200x200 pixels.
+
+4. Displays the detected face.
+
+5. Prompts the user to enter a name to search for in face_embeddings.csv.
+
+6. Retrieves the stored embedding for the entered name.
+
+7. Extracts embeddings for the detected face using ArcFace.
+
+8. Computes the Cosine Similarity between the stored and new embedding:
+
+9. If similarity > 0.6, the face is considered matched. Otherwise, it's flagged as a violation.
+
+🔹 How to Run
+
+Run the script:
+    
+    python verify_face.py
+
+The script will:
+
+1. Detect a face in 2.png.
+
+2. Show the face.
+
+3. Ask for a name to search in the database.
+
+4. Compare the detected face with the stored embedding.
+
+🔹 Expected Output
+
+    [Face is displayed]
+    Enter name to search: John Doe
+    Cosine Similarity: 0.78
+    Face Matched!
+
+or if no match is found:
+
+    Enter name to search: John Doe
+    Cosine Similarity: 0.45
+    No Match (Violation)
+    If no face is detected, the script exits.
+
