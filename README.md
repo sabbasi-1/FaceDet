@@ -81,7 +81,7 @@ or if no match is found:
 
 ## detect.py
 
-This script detects and extracts faces from images in a specified folder using a trained YOLO model and saves them as separate image files.
+This script detects and extracts faces from images in a specified folder using a trained model and saves them as separate image files.
 
 🔹 How It Works
 
@@ -115,4 +115,44 @@ Extracted faces will be saved in extracted_faces/.
 
 If no faces are detected, nothing will be saved.
 
+## add_face_with_name.py
 
+This script detects faces using a model, allows the user to label each face, and then stores the face embeddings in a CSV file using DeepFace.
+
+🔹 How It Works
+
+1. Loads a trained YOLO model (model.pt) for face detection.
+
+2. Reads an image (person.jpg) and detects faces.
+
+3. Extracts and resizes each detected face to 200x200 pixels.
+
+4. Displays each detected face to the user.
+
+5. Prompts the user to enter a name for each face.
+
+6. Computes the DeepFace embedding for the face and stores it in face_embeddings.csv.
+
+🔹 How to Run
+
+Run the script:
+
+    python save_face_embeddings.py
+
+The script will:
+    
+    Detect faces in person.jpg.
+    Show each face one by one.
+    Ask for a name.
+    Save the embedding in face_embeddings.csv.
+
+🔹 Expected Output
+    
+    [Face is displayed]
+    Enter name for this face: John Doe
+    Saved: John Doe
+    [Face is displayed]
+    Enter name for this face: Jane Doe
+    Saved: Jane Doe
+
+If no faces are detected, the script will simply exit.
