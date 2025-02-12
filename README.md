@@ -19,10 +19,12 @@ Prints a success message if the face is stored, or an error if no face is detect
 🔹 How to Run
 
 Ensure you have installed dependencies:
-pip install deepface pandas numpy pickle-mixin
+
+    pip install deepface pandas numpy pickle-mixin
 
 Run the script with an image path and a name:
-python add_face.py
+
+    python add_face.py
 
 The script will process person.jpg and store the embedding under the name "John Doe".
 
